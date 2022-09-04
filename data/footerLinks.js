@@ -9,6 +9,7 @@ const Portfolio = [
 export const Other = [
   { href: '/newsletter', title: 'Newsletter' },
   { href: '/tags', title: 'Tags' },
+  { href: 'https://uptime.vahryiskandar.my.id/', title: 'Uptime' },
 ]
 export const SocialLink = [
   { href: siteMetadata.github, title: 'GIthub' },
