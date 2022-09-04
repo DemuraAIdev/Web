@@ -1,12 +1,11 @@
 ---
 name: Abdul Vaiz
-avatar: /static/images/avatar.png
+avatar: /static/images/avatar.jpg
 occupation: Javacript Developer
 company: ANTJ NEWS
 email: contact@vahryiskandar.my.id
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+twitter: https://twitter.com/Abdulvaiz2
+github: https://github.com/DemuraAIdev/
 ---
 
 I am a website developer, bot, graphic designer, and nft artist. I learned to make a website from 2019
