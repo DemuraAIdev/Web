@@ -46,9 +46,9 @@ export default function Home({ posts }) {
             return (
               <li
                 key={slug}
-                className="mt-8 transform rounded-xl bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6]  to-[#9333EA] p-[5px] transition-all hover:scale-[1.01] "
+                className="mt-8 transform rounded-xl bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6]  to-[#9333EA] p-[5px] transition-all  hover:scale-[1.01] "
               >
-                <div className="flex h-full flex-col justify-between rounded-lg bg-white p-8 dark:bg-black ">
+                <div className="flex h-full flex-col justify-between  rounded-lg bg-white p-8 transition dark:bg-black ">
                   <article>
                     <div className="space-y-2  xl:items-baseline xl:space-y-0">
                       <dl>
