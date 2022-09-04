@@ -46,7 +46,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </div>
             </div>
           </header>
-          <div className="xl:col-span-3 xl:row-span-2 xl:pb-0">
+          <div className=" xl:pb-0">
             <div className="prose max-w-none pt-10 pb-3 dark:prose-dark">{children}</div>
             <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
               {tags && (

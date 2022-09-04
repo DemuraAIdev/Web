@@ -5,9 +5,9 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 
-import NewsletterForm from '@/components/NewsletterForm'
+import { BlogNewsletterForm } from '@/components/NewsletterForm'
 
-const MAX_DISPLAY = 2
+const MAX_DISPLAY = 1
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -19,15 +19,26 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="sm:text-8.5xl tracking-tightest my-28 select-none text-center text-6xl font-extrabold leading-none sm:my-10">
             Abdul Vaiz Vahry Iskandar
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+            {siteMetadata.description}{' '}
+            <Link
+              className="font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              aria-label="Email to thvu@hey.com"
+              title="Email to thvu@hey.com"
+              href="/about"
+            >
+              About me →
+            </Link>
           </p>
         </div>
+        <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
+          Latest blog posts
+        </h2>
         <ul className="divide-y">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
@@ -35,9 +46,9 @@ export default function Home({ posts }) {
             return (
               <li
                 key={slug}
-                className="mt-8 transform rounded-xl bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6]  to-[#9333EA] p-[6px] transition-all hover:scale-[1.01] "
+                className="mt-8 transform rounded-xl bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6]  to-[#9333EA] p-[5px] transition-all hover:scale-[1.01] "
               >
-                <div className="flex h-full flex-col justify-between rounded-lg bg-white p-10 dark:bg-black ">
+                <div className="flex h-full flex-col justify-between rounded-lg bg-white p-8 dark:bg-black ">
                   <article>
                     <div className="space-y-2  xl:items-baseline xl:space-y-0">
                       <dl>
@@ -86,7 +97,7 @@ export default function Home({ posts }) {
       )}
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+          <BlogNewsletterForm />
         </div>
       )}
     </>

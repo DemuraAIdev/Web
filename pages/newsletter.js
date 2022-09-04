@@ -1,12 +1,8 @@
 /* eslint-disable prettier/prettier */
-import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
-import formatDate from '@/lib/utils/formatDate'
-import NewsletterForm from '@/components/NewsletterForm'
-const MAX_DISPLAY = 2
+import { BlogNewsletterForm } from '@/components/NewsletterForm'
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -30,7 +26,11 @@ export default function Home({ posts }) {
           </p>
         </div>
       </div>
-      <NewsletterForm />
+      {siteMetadata.newsletter.provider !== '' && (
+        <div className="flex items-center justify-center pt-4">
+          <BlogNewsletterForm />
+        </div>
+      )}
     </>
   )
 }

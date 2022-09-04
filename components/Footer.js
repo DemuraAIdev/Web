@@ -1,30 +1,22 @@
 import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
+import footerLinks from '@/data/footerLinks'
 
 export default function Footer() {
   return (
     <footer>
-      <div className="mt-16 flex flex-col items-center">
-        <div className="mb-3 flex space-x-4">
-          <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
-          <SocialIcon kind="github" href={siteMetadata.github} size="6" />
-          <SocialIcon kind="facebook" href={siteMetadata.facebook} size="6" />
-          <SocialIcon kind="youtube" href={siteMetadata.youtube} size="6" />
-          <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="6" />
-          <SocialIcon kind="twitter" href={siteMetadata.twitter} size="6" />
-        </div>
-        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{siteMetadata.author}</div>
-          <div>{` • `}</div>
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <div>{` • `}</div>
-          <Link href="/">{siteMetadata.title}</Link>
-        </div>
-        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
-            Tailwind Nextjs Theme
-          </Link>
+      <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
+        <div className="flex flex-col space-y-4">
+          {footerLinks.map((link) => (
+            <Link
+              key={link.title}
+              href={link.href}
+              className=" rounded-lg p-1 font-medium text-gray-700 transition-all hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white sm:px-3 sm:py-2 md:inline-block"
+            >
+              {link.title}
+            </Link>
+          ))}
         </div>
       </div>
     </footer>
