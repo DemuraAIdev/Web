@@ -11,7 +11,7 @@ const LayoutWrapper = ({ children }) => {
   return (
     <div className="flex h-screen flex-col justify-between">
       <header className="firefox:bg-opacity-100 dark:firefox:bg-opacity-100 fixed top-0 z-20 flex w-full items-center  justify-between bg-white bg-opacity-30 py-4 backdrop-blur-lg backdrop-saturate-150 backdrop-filter  dark:bg-black dark:bg-opacity-30">
-        <nav className="mx-auto flex w-full max-w-md items-center justify-between px-4 sm:px-5 sm:py-2 xl:max-w-2xl xl:px-0">
+        <nav className="mx-auto flex w-full max-w-md items-center justify-between px-4 sm:px-4 sm:py-2 md:max-w-2xl md:px-0 xl:max-w-2xl xl:px-0">
           <div className="flex items-center text-base leading-5">
             <div className="hidden sm:block sm:space-x-8">
               {headerNavLinks.map((link) => (

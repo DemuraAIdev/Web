@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { useTheme } from 'next-themes'
 
+import { useTheme } from 'next-themes'
 import siteMetadata from '@/data/siteMetadata'
 
 const Giscus = () => {
@@ -62,7 +62,13 @@ const Giscus = () => {
   }, [LoadComments])
 
   return (
-    <div className="hover: pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
+    <div
+      className={`rounded-lg p-2 text-center text-gray-500 transition-all dark:text-gray-400 ${
+        enableLoadComments
+          ? 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600'
+          : 'bg-transparent'
+      }`}
+    >
       {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
       <div className="giscus" id={COMMENTS_ID} />
     </div>
