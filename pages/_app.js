@@ -13,6 +13,7 @@ import LayoutWrapper from '@/components/LayoutWrapper'
 import { ClientReload } from '@/components/ClientReload'
 import NProgress from 'nprogress'
 import '@/css/nprogress.css'
+import '@/css/wave.css'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET

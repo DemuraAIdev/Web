@@ -15,6 +15,27 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      animation: {
+        text: 'text 5s ease infinite',
+        text2: 'text2 5s ease infnite',
+      },
+      keyframes: {
+        text: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
+        text2: {
+          '50%': {
+            'background-color': 'red',
+          },
+        },
+      },
       spacing: {
         '9/16': '56.25%',
       },

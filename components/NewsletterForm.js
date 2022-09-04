@@ -71,7 +71,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
 export default NewsletterForm
 
 export const BlogNewsletterForm = ({ title }) => (
-  <div className="dark:bg-blue-opaque my-4 w-full rounded border border-blue-200  bg-blue-50 p-6 transition dark:border-gray-800 dark:bg-black">
+  <div className="dark:bg-blue-opaque my-4 w-full rounded border border-blue-200 bg-blue-50 p-6  shadow-xl transition dark:border-gray-800 dark:bg-black dark:shadow-none">
     <NewsletterForm title={title} />
   </div>
 )

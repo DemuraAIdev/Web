@@ -21,9 +21,17 @@ export default function Home({ posts }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="sm:text-8.5xl tracking-tightest my-28 select-none text-center text-6xl font-extrabold leading-none sm:my-10">
-            Abdul Vaiz Vahry Iskandar
-          </h1>
+          <div
+            className="animate-text bg-gradient-to-r 
+            from-[#6EE7B7] via-[#3B82F6]  to-[#9333EA]
+            bg-clip-text
+            text-transparent
+            "
+          >
+            <h1 className="sm:text-8.5xl tracking-tightest my-28 select-none text-center text-6xl font-extrabold leading-none sm:my-10">
+              Abdul Vaiz Vahry Iskandar
+            </h1>
+          </div>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}{' '}
             <Link
@@ -46,7 +54,8 @@ export default function Home({ posts }) {
             return (
               <li
                 key={slug}
-                className="mt-8 transform rounded-xl bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6]  to-[#9333EA] p-[5px] transition-all  hover:scale-[1.01] "
+                className="mt-8 transform animate-text rounded-xl bg-gradient-to-r 
+            from-[#6EE7B7] via-[#3B82F6]  to-[#9333EA] p-[5px] shadow-xl transition-all hover:scale-[1.01]  dark:shadow-none "
               >
                 <div className="flex h-full flex-col justify-between  rounded-lg bg-white p-8 transition dark:bg-black ">
                   <article>
