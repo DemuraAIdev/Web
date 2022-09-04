@@ -10,6 +10,7 @@ export const Other = [
   { href: '/newsletter', title: 'Newsletter' },
   { href: '/tags', title: 'Tags' },
   { href: 'https://uptime.vahryiskandar.my.id/', title: 'Uptime' },
+  { href: 'https://umami.vahryiskandar.my.id/share/LNdNPeZv/Utma', title: 'Analytics' },
 ]
 export const SocialLink = [
   { href: siteMetadata.github, title: 'GIthub' },
