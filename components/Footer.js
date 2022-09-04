@@ -1,6 +1,5 @@
 import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
-import External from '@/components/social-icons/external.svg'
 import footerLinks from '@/data/footerLinks'
 import { Other } from '@/data/footerLinks'
 import { SocialLink } from '@/data/footerLinks'
