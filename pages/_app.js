@@ -4,6 +4,7 @@ import 'katex/dist/katex.css'
 
 import '@fontsource/inter/variable-full.css'
 
+import React, { useState, useEffect } from 'react'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import Router from 'next/router'
@@ -23,6 +24,12 @@ Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const loader = document.getElementById('globalLoader')
+      if (loader) loader.style.display = 'none'
+    }
+  }, [])
   return (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
