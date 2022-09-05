@@ -25,8 +25,8 @@ class MyDocument extends Document {
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </Head>
         <body className="bg-white text-black antialiased transition-colors duration-1000 dark:bg-black dark:text-white">
-          <div className="top-50 flex h-screen" id={'globalLoader'}>
-            <div className="m-auto">
+          <div className="fixed z-50 block h-full w-full" id={'globalLoader'}>
+            <div className="m-auto ">
               <button
                 type="button"
                 className="inline-flex cursor-not-allowed items-center rounded-md bg-indigo-500 px-4 py-2 text-sm font-semibold leading-6 text-white shadow transition duration-150 ease-in-out hover:bg-indigo-400"
