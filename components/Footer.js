@@ -3,7 +3,6 @@ import siteMetadata from '@/data/siteMetadata'
 import footerLinks from '@/data/footerLinks'
 import { Other } from '@/data/footerLinks'
 import { SocialLink } from '@/data/footerLinks'
-
 export default function Footer() {
   return (
     <footer className="mt-10">
@@ -31,6 +30,7 @@ export default function Footer() {
             </Link>
           ))}
         </div>
+
         <div className="flex flex-col space-y-4">
           {SocialLink.map((link) => (
             <Link
