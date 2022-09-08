@@ -9,6 +9,7 @@ const Portfolio = [
 export const Other = [
   { href: '/newsletter', title: 'Newsletter' },
   { href: '/tags', title: 'Tags' },
+  { href: 'https://bin.vahryiskandar.my.id/', title: 'Bin' },
   { href: 'https://uptime.vahryiskandar.my.id/', title: 'Uptime' },
   { href: 'https://umami.vahryiskandar.my.id/share/LNdNPeZv/Utma', title: 'Analytics' },
 ]
