@@ -3,9 +3,12 @@ import siteMetadata from '@/data/siteMetadata'
 import footerLinks from '@/data/footerLinks'
 import { Other } from '@/data/footerLinks'
 import { SocialLink } from '@/data/footerLinks'
+import NowPlaying from '@/components/nplaying'
 export default function Footer() {
   return (
     <footer className="mt-10">
+      <hr className="border-1 mb-8 w-full border-gray-200 dark:border-gray-800" />
+      <NowPlaying />
       <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
           {footerLinks.map((link) => (

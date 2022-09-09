@@ -4,7 +4,8 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
-
+import { TypedBios } from '@/components/type'
+import VanillaTilt from 'vanilla-tilt'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
 
 const MAX_DISPLAY = 1
@@ -33,9 +34,10 @@ export default function Home({ posts }) {
             </h1>
           </div>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}{' '}
+            <TypedBios />
+            {siteMetadata.description}
             <Link
-              className="font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="ml-2 font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label="Email to thvu@hey.com"
               title="Email to thvu@hey.com"
               href="/about"
@@ -47,7 +49,7 @@ export default function Home({ posts }) {
         <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
           Latest blog posts
         </h2>
-        <ul className="divide-y">
+        <ul className="grid grid-cols-1 divide-y">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter

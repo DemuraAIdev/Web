@@ -15,10 +15,6 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      animation: {
-        text: 'text 5s ease infinite',
-        text2: 'text2 5s ease infnite',
-      },
       keyframes: {
         text: {
           '0%, 100%': {
@@ -35,9 +31,32 @@ module.exports = {
             'background-color': 'red',
           },
         },
+        shrink: {
+          '0% , 100%': {
+            height: '0.75rem',
+          },
+          '50%': {
+            height: '0.375rem',
+          },
+        },
+        expand: {
+          '0% , 100%': {
+            height: '0.375rem',
+          },
+          '50%': {
+            height: '0.75rem',
+          },
+        },
+      },
+      animation: {
+        text: 'text 5s ease infinite',
+        text2: 'text2 5s ease infnite',
+        shrink: 'shrink 1.5s infinite',
+        expand: 'expand 1.5s infinite',
       },
       spacing: {
         '9/16': '56.25%',
+        0.75: '0.1875rem',
       },
       lineHeight: {
         11: '2.75rem',
@@ -49,6 +68,7 @@ module.exports = {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
       colors: {
+        'spotify-green': '#1DB954',
         primary: colors.teal,
         gray: colors.neutral,
       },
