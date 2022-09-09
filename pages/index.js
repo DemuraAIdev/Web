@@ -7,8 +7,9 @@ import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
 import VanillaTilt from 'vanilla-tilt'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
+import Notif from '@/components/Notif'
 
-const MAX_DISPLAY = 1
+const MAX_DISPLAY = 2
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -29,6 +30,7 @@ export default function Home({ posts }) {
             text-transparent
             "
           >
+            <Notif />
             <h1 className="sm:text-8.5xl tracking-tightest my-28 select-none text-center text-6xl font-extrabold leading-none sm:my-10">
               Abdul Vaiz Vahry Iskandar
             </h1>
@@ -37,7 +39,7 @@ export default function Home({ posts }) {
             <TypedBios />
             {siteMetadata.description}
             <Link
-              className="ml-2 font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="umami--click--aboutme-shortcut ml-2 font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label="Email to thvu@hey.com"
               title="Email to thvu@hey.com"
               href="/about"
