@@ -13,7 +13,7 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
   return (
     <>
-      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <PageSEO title={`Newsletter - ${siteMetadata.author}`} description="Subscribe now" />
       <div className="">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
