@@ -31,7 +31,7 @@ export function TypedBios() {
         <li>I work mostly with NextJS/Node and pure JS.</li>
         <li>I love EDM music.</li>
       </ul>
-      <span ref={el} className="text-gray-500 dark:text-gray-400" />
+      <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
     </div>
   )
 }

@@ -20,7 +20,7 @@ export default function Notif() {
         <span className="mr-3 flex rounded-full bg-indigo-500 px-2 py-1 text-xs font-bold uppercase">
           Update
         </span>
-        <span className="mr-2 flex-auto text-left font-semibold">Website Update 2.0 🎉</span>
+        <span className="mr-2 flex-auto text-left font-semibold">Website Update 2.3 🎉</span>
       </div>
     </div>
   )

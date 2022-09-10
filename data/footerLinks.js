@@ -5,7 +5,7 @@ const Portfolio = [
   { href: '/blog', title: 'Blog' },
   { href: '/projects', title: 'Projects' },
   { href: '/about', title: 'About' },
-  { href: '/feed.xml', title: 'RSS' },
+  { href: '/guestbook', title: 'Guestbook' },
 ]
 export const Other = [
   { href: '/newsletter', title: 'Newsletter' },

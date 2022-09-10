@@ -15,6 +15,7 @@ import LayoutWrapper from '@/components/LayoutWrapper'
 import { ClientReload } from '@/components/ClientReload'
 import NProgress from 'nprogress'
 import '@/css/nprogress.css'
+import { SessionProvider } from 'next-auth/react'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
@@ -34,15 +35,17 @@ export default function App({ Component, pageProps }) {
     }
   }, [])
   return (
-    <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-      <Head>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-      </Head>
-      {isDevelopment && isSocket && <ClientReload />}
-      <Analytics />
-      <LayoutWrapper>
-        <Component {...pageProps} />
-      </LayoutWrapper>
-    </ThemeProvider>
+    <SessionProvider session={pageProps.session}>
+      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+        <Head>
+          <meta content="width=device-width, initial-scale=1" name="viewport" />
+        </Head>
+        {isDevelopment && isSocket && <ClientReload />}
+        <Analytics />
+        <LayoutWrapper>
+          <Component {...pageProps} />
+        </LayoutWrapper>
+      </ThemeProvider>
+    </SessionProvider>
   )
 }

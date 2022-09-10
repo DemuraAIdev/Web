@@ -1,15 +1,20 @@
-import { useRef, useState } from 'react'
+import { useState, useRef, Suspense } from 'react'
 
 import siteMetadata from '@/data/siteMetadata'
+import SuccessMessage from '@/components/SuccessMessage'
+import ErrorMessage from '@/components/ErrorMessage'
+import LoadingSpinner from '@/components/LoadingSpinner'
 
 const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
   const inputEl = useRef(null)
   const [error, setError] = useState(false)
   const [message, setMessage] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+  const [form, setForm] = useState({ state: 'Inital' })
 
   const subscribe = async (e) => {
     e.preventDefault()
+    setForm({ state: 'Loading' })
 
     const res = await fetch(`/api/${siteMetadata.newsletter.provider}`, {
       body: JSON.stringify({
@@ -23,16 +28,20 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
 
     const { error } = await res.json()
     if (error) {
-      console.log(error)
-      setError(true)
-      setMessage('Your e-mail address is invalid or you are already subscribed!')
+      setForm({
+        state: 'Error',
+        message: error,
+      })
       return
     }
 
     inputEl.current.value = ''
     setError(false)
     setSubscribed(true)
-    setMessage('Successfully! 🎉 You are now subscribed.')
+    setForm({
+      state: 'Success',
+      message: `Wow! That was Giga.`,
+    })
   }
 
   return (
@@ -58,11 +67,17 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
           type="submit"
           disabled={subscribed}
         >
-          {subscribed ? 'Thanks!' : 'Sign up'}
+          {form.state === 'Loading' ? <LoadingSpinner /> : 'Sign'}
         </button>
       </form>
-      {error && (
-        <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">{message}</div>
+      {form.state === 'Error' ? (
+        <ErrorMessage>{form.message}</ErrorMessage>
+      ) : form.state === 'Success' ? (
+        <SuccessMessage>{form.message}</SuccessMessage>
+      ) : (
+        <p className="text-sm text-gray-800 dark:text-gray-200">
+          Your information is only used to display your name and reply by email.
+        </p>
       )}
     </div>
   )

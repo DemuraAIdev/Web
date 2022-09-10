@@ -5,10 +5,8 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
-import VanillaTilt from 'vanilla-tilt'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
 import Notif from '@/components/Notif'
-import Birtday from '@/components/birthdaycard'
 
 const MAX_DISPLAY = 2
 
@@ -110,7 +108,7 @@ export default function Home({ posts }) {
         </div>
       )}
       <hr className="border-1 mb-8 mt-8 w-full border-gray-200 dark:border-gray-800" />
-      <Birtday />
+
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
           <BlogNewsletterForm />
