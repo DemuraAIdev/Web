@@ -25,7 +25,6 @@ export default function Footer() {
           {Other.map((link) => (
             <Link
               key={link.title}
-              d
               href={link.href}
               className=" text-gray-500 transition hover:text-gray-600"
             >
@@ -38,7 +37,6 @@ export default function Footer() {
           {SocialLink.map((link) => (
             <Link
               key={link.title}
-              d
               href={link.href}
               className=" text-gray-500 transition hover:text-gray-600"
             >

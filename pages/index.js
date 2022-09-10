@@ -34,8 +34,8 @@ export default function Home({ posts }) {
               Abdul Vaiz Vahry Iskandar
             </h1>
           </div>
+          <TypedBios />
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            <TypedBios />
             {siteMetadata.description}
             <Link
               className="umami--click--aboutme-shortcut ml-2 font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"

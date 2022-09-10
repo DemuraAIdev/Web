@@ -19,7 +19,7 @@ export function TypedBios() {
   }, [])
 
   return (
-    <div>
+    <>
       <ul id="bios" className="hidden">
         <li>
           I live in <b className="font-medium">Indonesia</b>.
@@ -31,7 +31,7 @@ export function TypedBios() {
         <li>I work mostly with NextJS/Node and pure JS.</li>
         <li>I love EDM music.</li>
       </ul>
-      <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
-    </div>
+      <span ref={el} className="text-lg text-neutral-900 dark:text-neutral-200" />
+    </>
   )
 }
