@@ -1,14 +1,15 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable prettier/prettier */
 import { useState, useRef, Suspense } from 'react'
 import { format } from 'date-fns'
-import { signIn, useSession } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import useSWR, { useSWRConfig } from 'swr'
 
 import fetcher from '@/lib/fetcher'
-
 import SuccessMessage from '@/components/SuccessMessage'
 import ErrorMessage from '@/components/ErrorMessage'
 import LoadingSpinner from '@/components/LoadingSpinner'
+import LoginBut from '@/components/LoginBut'
 
 function GuestbookEntry({ entry, user }) {
   const { mutate } = useSWRConfig()
@@ -86,27 +87,9 @@ export default function Guestbook({ fallbackData }) {
 
   return (
     <>
+      <LoginBut message="Login to sign the guestbook." />
       <div className="dark:bg-blue-opaque my-4 w-full rounded border border-blue-200 bg-blue-50 p-6 shadow-xl transition dark:border-gray-800 dark:bg-black dark:shadow-none">
-        <h5 className="text-lg font-bold text-gray-900 dark:text-gray-100 md:text-xl">
-          Sign the Guestbook
-        </h5>
-        <p className="my-1 text-gray-800 dark:text-gray-200">
-          Share a message for a future visitor of my site.
-        </p>
-        {!session && (
-          // eslint-disable-next-line @next/next/no-html-link-for-pages
-          <a
-            href="/api/auth/signin/github"
-            className="my-4 flex h-8 w-28 items-center justify-center rounded bg-gray-200 font-bold text-gray-900 dark:bg-gray-700 dark:text-gray-100"
-            onClick={(e) => {
-              e.preventDefault()
-              signIn('github')
-            }}
-          >
-            Login
-          </a>
-        )}
-        {session?.user && (
+        {Boolean(session?.user) && (
           <form className="relative my-4" onSubmit={leaveEntry}>
             <input
               ref={inputEl}
