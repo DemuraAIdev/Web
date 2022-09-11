@@ -15,7 +15,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-500 transition hover:text-primary-400"
+              className=" text-gray-400 transition hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -26,7 +26,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-500 transition hover:text-primary-400"
+              className=" text-gray-400 transition hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-500 transition hover:text-primary-400"
+              className=" text-gray-400 transition hover:text-primary-400"
             >
               {link.title}
               <svg
@@ -58,7 +58,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="mb-9 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
+      <div className="mb-9 flex space-x-2 text-sm text-gray-400 dark:text-gray-400">
         <div>{siteMetadata.author}</div>
         <div>{` • `}</div>
         <div>{`© ${new Date().getFullYear()}`}</div>
