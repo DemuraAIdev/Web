@@ -15,7 +15,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-500 transition hover:text-gray-600"
+              className=" text-gray-500 transition hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -26,7 +26,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-500 transition hover:text-gray-600"
+              className=" text-gray-500 transition hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-500 transition hover:text-gray-600"
+              className=" text-gray-500 transition hover:text-primary-400"
             >
               {link.title}
               <svg
