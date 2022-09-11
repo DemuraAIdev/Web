@@ -20,7 +20,6 @@ export function middleware(req, ev) {
 
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
   response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
-  response.headers.set('X-Frame-Options', 'ALLOW-FROM=giscus.app')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('X-DNS-Prefetch-Control', 'on')
   response.headers.set('Permissions-Policy', 'geolocation=(self), microphone=()')
