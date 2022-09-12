@@ -1,9 +1,17 @@
 /* eslint-disable prettier/prettier */
 import { signIn, signOut, useSession } from 'next-auth/react'
 import CustomLink from './Link'
+import { useState } from 'react'
 import LoadingSpinner from './LoadingSpinner'
 export default function GuestbookEntry({ message }) {
   const { data: session } = useSession()
+  const [isLoading, setIsLoading] = useState()
+  const onSignIn = async () => {
+    setIsLoading(true)
+    await signIn()
+    setIsLoading(false)
+  }
+
   return (
     <div>
       <h5 className="text-lg font-bold text-gray-900 dark:text-gray-100 md:text-xl">
@@ -21,7 +29,9 @@ export default function GuestbookEntry({ message }) {
             href="/api/auth/signout"
             onClick={async (e) => {
               e.preventDefault()
+              setIsLoading(true)
               await signOut()
+              setIsLoading(false)
             }}
           >
             Log out
@@ -29,16 +39,12 @@ export default function GuestbookEntry({ message }) {
         </div>
       ) : (
         // eslint-disable-next-line @next/next/no-html-link-for-pages
-        <a
-          href="/api/auth/signin/github"
+        <button
           className="my-4 flex h-8 w-28 items-center justify-center rounded bg-gray-200 font-bold text-gray-900 dark:bg-gray-700 dark:text-gray-100"
-          onClick={(e) => {
-            e.preventDefault()
-            signIn('github')
-          }}
+          onClick={onSignIn}
         >
-          Login
-        </a>
+          {isLoading ? <LoadingSpinner /> : 'Login'}
+        </button>
       )}
     </div>
   )

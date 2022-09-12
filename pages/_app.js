@@ -20,7 +20,7 @@ import { SessionProvider } from 'next-auth/react'
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
-NProgress.configure({ showSpinner: true })
+NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())

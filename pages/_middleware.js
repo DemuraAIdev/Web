@@ -11,7 +11,6 @@ export function middleware(req, ev) {
     worker-src 'self' *.youtube.com *.google.com *.twitter.com;
     connect-src *;
     object-src 'none';
-    form-action 'self';
     frame-ancestors 'none';
     base-uri 'none';
     frame-src giscus.app;
