@@ -6,7 +6,6 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
-import Notif from '@/components/Notif'
 
 const MAX_DISPLAY = 2
 
@@ -29,7 +28,6 @@ export default function Home({ posts }) {
             text-transparent
             "
           >
-            <Notif />
             <h1 className="sm:text-8.5xl tracking-tightest my-28 select-none text-center text-6xl font-extrabold leading-none sm:my-10">
               Abdul Vaiz Vahry Iskandar
             </h1>

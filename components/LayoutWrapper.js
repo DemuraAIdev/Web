@@ -6,7 +6,7 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-
+import Notif from '@/components/Notif'
 const LayoutWrapper = ({ children }) => {
   return (
     <>
