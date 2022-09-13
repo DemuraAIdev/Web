@@ -6,8 +6,15 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-
+import ErrorMessage from '@/components/ErrorMessage'
 export default function SignIn({ providers }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+  useEffect(() => {
+    if (router.query.error) {
+      setIsOpen(true)
+    }
+  }, [router])
   return (
     <>
       <PageSEO
@@ -20,9 +27,16 @@ export default function SignIn({ providers }) {
       <div className="flex flex-col items-center justify-items-center space-y-2 xl:space-y-0">
         <div className="prose max-w-none p-8 dark:prose-dark">
           <div className="flex flex-col items-center justify-between gap-4">
-            <p className="text-center sm:text-left">
-              Sign in to access guestbook features and more
-            </p>
+            {setIsOpen ? (
+              <>
+                <p className="text-center sm:text-left">
+                  Sign in to access guestbook features and more
+                </p>
+              </>
+            ) : (
+              <ErrorMessage>Error</ErrorMessage>
+            )}
+
             {providers &&
               Object.values(providers).map((provider) => {
                 return <LoginButton key={provider.id} provider={provider} />
