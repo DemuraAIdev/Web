@@ -27,14 +27,14 @@ export default function SignIn({ providers }) {
       <div className="flex flex-col items-center justify-items-center space-y-2 xl:space-y-0">
         <div className="prose max-w-none p-8 dark:prose-dark">
           <div className="flex flex-col items-center justify-between gap-4">
-            {setIsOpen ? (
+            {isOpen ? (
               <>
-                <p className="text-center sm:text-left">
-                  Sign in to access guestbook features and more
-                </p>
+                <ErrorMessage>Error</ErrorMessage>
               </>
             ) : (
-              <ErrorMessage>Error</ErrorMessage>
+              <p className="text-center sm:text-left">
+                Sign in to access guestbook features and more
+              </p>
             )}
 
             {providers &&
