@@ -3,7 +3,6 @@ import Image from '@/components/Image'
 import { PageSEO } from '@/components/SEO'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import siteMetadata from '@/data/siteMetadata'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
@@ -19,13 +18,13 @@ export default function AuthorLayout({ children, frontMatter }) {
           </h1>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
-          <div className="flex flex-col items-center pt-8">
+          <div className="flex flex-col items-center pt-8 xl:sticky xl:top-12 xl:mt-5">
             <Image
               src={avatar}
               alt="avatar"
               width="192px"
               height="192px"
-              className="h-48 w-48 rounded"
+              className="h-48 w-48 rounded-xl xl:mt-10"
             />
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
             <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
