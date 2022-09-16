@@ -4,7 +4,7 @@ export function middleware(req, ev) {
   const response = NextResponse.next()
   const csp = `
     default-src 'self';
-    script-src 'self' *.twitter.com 'unsafe-eval' 'unsafe-inline' data: giscus.app umami.vahryiskandar.my.id;
+    script-src 'self' *.twitter.com 'unsafe-eval' 'unsafe-inline' data: giscus.app umami.vahryiskandar.my.id www.googletagmanager.com;
     child-src *.youtube.com *.google.com *.twitter.com https://cdpn.io https://codepen.io https://dbdiagram.io;
     style-src 'self' *.googleapis.com 'unsafe-inline' 'unsafe-eval';
     img-src 'self' data: https: blob: https://www.googletagmanager.com;
