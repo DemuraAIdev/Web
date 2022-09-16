@@ -14,6 +14,7 @@ export function middleware(req, ev) {
     frame-ancestors 'none';
     base-uri 'none';
     frame-src giscus.app;
+    script-src-elem	 https://plausible.io;
   `
   response.headers.set('Content-Security-Policy', csp.replace(/\n/g, ''))
 
