@@ -38,8 +38,6 @@ export default function Home({ posts }) {
             {siteMetadata.description}
             <Link
               className="umami--click--aboutme-shortcut ml-2 font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-              aria-label="Email to thvu@hey.com"
-              title="Email to thvu@hey.com"
               href="/about"
             >
               About me →
