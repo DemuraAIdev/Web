@@ -6,6 +6,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
+import CardSpotify from '@/components/CardSpotify'
 
 const MAX_DISPLAY = 2
 
@@ -44,6 +45,7 @@ export default function Home({ posts }) {
               About me →
             </Link>
           </p>
+          <CardSpotify />
         </div>
         <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
           Latest blog posts
