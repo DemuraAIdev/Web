@@ -5,7 +5,7 @@ export function middleware(req, ev) {
   const csp = `
     default-src 'self';
     script-src 'self' *.twitter.com 'unsafe-eval' 'unsafe-inline' data: giscus.app umami.vahryiskandar.my.id www.googletagmanager.com;
-    child-src *.youtube.com *.google.com *.twitter.com https://cdpn.io https://codepen.io https://dbdiagram.io;
+    child-src *.youtube.com *.google.com *.twitter.com https://cdpn.io https://codepen.io https://dbdiagram.io https://plausible.io/;
     style-src 'self' *.googleapis.com 'unsafe-inline' 'unsafe-eval';
     img-src 'self' data: https: blob: https://www.googletagmanager.com;
     worker-src 'self' *.youtube.com *.google.com *.twitter.com;
@@ -20,7 +20,9 @@ export function middleware(req, ev) {
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
   response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
   response.headers.set('X-Content-Type-Options', 'nosniff')
-  response.headers.set('Access-Control-Allow-Origin', 'https://umami.vahryiskandar.my.id')
+  response.headers.set('Access-Control-Allow-Origin', 'http://vahryiskandar.my.id')
+  response.headers.set('Access-Control-Allow-Methods', 'POST')
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   response.headers.set('X-DNS-Prefetch-Control', 'on')
   response.headers.set('Permissions-Policy', 'geolocation=(self), microphone=()')
 
