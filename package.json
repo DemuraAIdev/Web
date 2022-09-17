@@ -59,6 +59,7 @@
     "vanilla-tilt": "^1.7.2"
   },
   "devDependencies": {
+    "@hint/configuration-web-recommended": "^8.2.15",
     "@next/bundle-analyzer": "12.1.4",
     "@svgr/webpack": "^6.1.2",
     "cross-env": "^7.0.3",
@@ -69,6 +70,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "file-loader": "^6.0.0",
     "globby": "11.0.3",
+    "hint": "^7.1.2",
     "husky": "^6.0.0",
     "inquirer": "^8.1.1",
     "lint-staged": "^11.0.0",
