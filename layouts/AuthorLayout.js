@@ -18,7 +18,7 @@ export default function AuthorLayout({ children, frontMatter }) {
           </h1>
         </div>
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
-          <div className="flex flex-col items-center pt-8 xl:sticky xl:top-12 xl:mt-5">
+          <div className="flex flex-col items-center pt-4 xl:sticky xl:top-20 xl:mt-5">
             <Image
               src={avatar}
               alt="avatar"
@@ -38,9 +38,6 @@ export default function AuthorLayout({ children, frontMatter }) {
           </div>
           <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{children}</div>
         </div>
-      </div>
-      <div className="mt-20">
-        <Comments frontMatter={frontMatter} />
       </div>
     </>
   )

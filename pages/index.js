@@ -33,17 +33,19 @@ export default function Home({ posts }) {
               Abdul Vaiz Vahry Iskandar
             </h1>
           </div>
-          <TypedBios />
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
-            <Link
-              className=" ml-2 font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-              href="/about"
-            >
-              About me →
-            </Link>
-          </p>
-          <CardSpotify />
+          <div>
+            <TypedBios />
+            <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+              {siteMetadata.description}
+              <Link
+                className=" ml-2 font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                href="/about"
+              >
+                About me →
+              </Link>
+            </p>
+            <CardSpotify />
+          </div>
         </div>
         <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
           Latest blog posts
