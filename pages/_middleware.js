@@ -21,9 +21,11 @@ export function middleware(req, ev) {
   response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Access-Control-Allow-Methods', 'GET, DELETE, POST, OPTIONS, HEAD')
-  response.headers.set('Access-Control-Allow-Origin', '*')
+  response.headers.set('Access-Control-Allow-Origin', 'https://umami.vahryiskandar.my.id')
   response.headers.set('Access-Control-Allow-Credentials', 'true')
   response.headers.set('X-DNS-Prefetch-Control', 'on')
+  response.headers.set('Accept', '*/*')
+  response.headers.set('Accept-Language', '*')
   response.headers.set('Permissions-Policy', 'geolocation=(self), microphone=()')
 
   return response
