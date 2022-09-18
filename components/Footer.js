@@ -53,6 +53,9 @@ export default function Footer() {
         <div>{`© ${new Date().getFullYear()}`}</div>
         <div>{` • `}</div>
         <Link href="/">{siteMetadata.title}</Link>
+        <span className="text-xxs dark:bg-secondary-500 rounded-lg bg-primary-700 px-2 py-0 leading-6 text-slate-50">
+          2.9
+        </span>
       </div>
     </footer>
   )

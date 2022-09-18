@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .special-underline {
+    @apply from-primary-color-500 to-primary-color-500 dark: from-primary-color-dark-500 dark:to-primary-color-dark-500 bg-gradient-to-r bg-no-repeat [background-position:0_100%] [background-size:100%_0.2em] hover:[background-size:100%_100%] focus:[background-size:100%_100%] motion-safe:transition-all motion-safe:duration-200;
+  }
+  .bg-cust1 {
+    box-shadow: inset 0 0 0 0 #14b8a6;
+    color: #14b8a6;
+    padding: 0 0.25rem;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .bg-cust1:hover {
+    box-shadow: inset 200px 0 0 0 #14b8a6;
+    color: white;
+  }
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(to right, #14b8a6, #14b8a6);
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.4s ease-in-out;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(to right, #14b8a6, #14b8a6);
+}
+
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
+
 .task-list-item::before {
   @apply hidden;
 }
@@ -23,6 +60,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s;
 }
+
 .loader {
   border-top-color: #3498db;
   -webkit-animation: spinner 1.5s linear infinite;
@@ -33,6 +71,7 @@ input:-webkit-autofill:focus {
   0% {
     -webkit-transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
   }
@@ -42,6 +81,7 @@ input:-webkit-autofill:focus {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

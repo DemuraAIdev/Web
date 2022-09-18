@@ -5,7 +5,7 @@ import 'katex/dist/katex.css'
 
 import '@fontsource/inter/variable-full.css'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import Router from 'next/router'
@@ -16,11 +16,12 @@ import { ClientReload } from '@/components/ClientReload'
 import NProgress from 'nprogress'
 import '@/css/nprogress.css'
 import { SessionProvider } from 'next-auth/react'
+import CBb from '@/components/cb'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
-NProgress.configure({ showSpinner: false })
+NProgress.configure({ showSpinner: false, trickle: false })
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())

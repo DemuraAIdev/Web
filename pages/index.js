@@ -6,7 +6,6 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
-import CardSpotify from '@/components/CardSpotify'
 
 const MAX_DISPLAY = 2
 
@@ -37,14 +36,10 @@ export default function Home({ posts }) {
             <TypedBios />
             <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
               {siteMetadata.description}
-              <Link
-                className=" ml-2 font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                href="/about"
-              >
+              <Link className=" bg-cust1 ml-2 font-medium leading-6 " href="/about">
                 About me →
               </Link>
             </p>
-            <CardSpotify />
           </div>
         </div>
         <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
