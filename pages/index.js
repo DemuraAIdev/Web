@@ -44,12 +44,6 @@ export default function Home({ posts }) {
           </div>
         </div>
         <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
-          Skill
-        </h2>
-        <Skil skill={'HTML'} desk={'Programming Language'} icon="html" />
-        <Skil skill={'Javascript'} desk={'Programming Language'} icon="javas" />
-        <Skil skill={'Next.JS'} desk={'React Framework'} icon="next" />
-        <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
           Latest blog posts
         </h2>
         <ul className="grid grid-cols-1 divide-y">
@@ -109,6 +103,12 @@ export default function Home({ posts }) {
           </Link>
         </div>
       )}
+      <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
+        Skill
+      </h2>
+      <Skil skill={'HTML'} desk={'Programming Language'} icon="html" />
+      <Skil skill={'Javascript'} desk={'Programming Language'} icon="javas" />
+      <Skil skill={'Next.JS'} desk={'React Framework'} icon="next" />
       <hr className="border-1 mb-8 mt-8 w-full border-gray-200 dark:border-gray-800" />
 
       {siteMetadata.newsletter.provider !== '' && (
