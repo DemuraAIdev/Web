@@ -13,17 +13,9 @@ const components = {
   node: NodeJS,
   react: React,
 }
-const colors = {
-  html: '#E34F26',
-  javas: '#f7df1e',
-  next: '#000000',
-  node: '#339933',
-  react: '#61DAFB',
-}
 
 const SkillIcon = ({ kind, href, size = 10 }) => {
   const SkillSvg = components[kind]
-  const ColorSVG = colors[kind]
   return (
     <a
       className="text-sm transition hover:text-gray-600"
@@ -32,9 +24,7 @@ const SkillIcon = ({ kind, href, size = 10 }) => {
       href={href}
     >
       <span className="sr-only">{kind}</span>
-      <SkillSvg
-        className={`fill-current text-[${ColorSVG}] rounded-md dark:text-white h-${size} w-${size}`}
-      />
+      <SkillSvg className={`rounded-md fill-current dark:text-white h-${size} w-${size}`} />
     </a>
   )
 }
