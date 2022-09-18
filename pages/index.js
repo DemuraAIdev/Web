@@ -6,6 +6,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
+import Skil from '@/components/skil'
 
 const MAX_DISPLAY = 2
 
@@ -42,6 +43,12 @@ export default function Home({ posts }) {
             </p>
           </div>
         </div>
+        <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
+          Skill
+        </h2>
+        <Skil skill={'HTML'} desk={'Programming Language'} icon="html" />
+        <Skil skill={'Javascript'} desk={'Programming Language'} icon="javas" />
+        <Skil skill={'Next.JS'} desk={'React Framework'} icon="next" />
         <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
           Latest blog posts
         </h2>
