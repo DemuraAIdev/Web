@@ -103,7 +103,7 @@ export default function Home({ posts }) {
           </Link>
         </div>
       )}
-      <h2 className="text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
+      <h2 className="mt-8 text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
         Skill
       </h2>
       <Skil skill={'HTML'} desk={'Programming Language'} icon="html" />
