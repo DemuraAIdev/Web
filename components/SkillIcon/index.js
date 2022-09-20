@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
-import Html from './html5.svg'
-import Javascript from './javascript.svg'
-import NextJS from './nextdotjs.svg'
-import NodeJS from './nodedotjs.svg'
-import React from './react.svg'
+import Html from './html5'
+import Javascript from './Javascript'
+import NextJS from './Nextdotjs'
+import NodeJS from './Nodedotjs'
+import React from './React'
 // Icons taken from: https://simpleicons.org/
 
 const components = {

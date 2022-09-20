@@ -1,12 +1,10 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
 import Link from './Link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
-import Notif from '@/components/Notif'
 const LayoutWrapper = ({ children }) => {
   return (
     <>
@@ -19,7 +17,7 @@ const LayoutWrapper = ({ children }) => {
                   <Link
                     key={link.title}
                     href={link.href}
-                    className="link-underline dark:link-underline-black rounded-lg p-1 font-medium text-gray-700 transition-all hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white sm:px-3 sm:py-2 md:inline-block"
+                    className="link-underline dark:link-underline-black rounded-t-lg p-1 font-medium text-gray-700 transition-all hover:bg-gray-200 hover:text-black dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white sm:px-3 sm:py-2 md:inline-block"
                   >
                     {link.title}
                   </Link>
@@ -34,6 +32,52 @@ const LayoutWrapper = ({ children }) => {
           <main className="mb-auto mt-20">{children}</main>
           <Footer />
         </SectionContainer>
+      </div>
+      <div
+        id="dropdownInformation"
+        className="z-10 hidden w-44 divide-y divide-gray-100 rounded bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+      >
+        <div className="py-3 px-4 text-sm text-gray-900 dark:text-white">
+          <div>Bonnie Green</div>
+          <div className="truncate font-medium">name@flowbite.com</div>
+        </div>
+        <ul
+          className="py-1 text-sm text-gray-700 dark:text-gray-200"
+          aria-labelledby="dropdownInformationButton"
+        >
+          <li>
+            <a
+              href="#"
+              className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              Settings
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              Earnings
+            </a>
+          </li>
+        </ul>
+        <div className="py-1">
+          <a
+            href="#"
+            className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+          >
+            Sign out
+          </a>
+        </div>
       </div>
     </>
   )

@@ -6,7 +6,6 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
-import Skil from '@/components/skil'
 
 const MAX_DISPLAY = 2
 
@@ -103,13 +102,6 @@ export default function Home({ posts }) {
           </Link>
         </div>
       )}
-      <h2 className="mt-8 text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
-        Skill
-      </h2>
-      <Skil skill={'HTML'} desk={'Programming Language'} icon="html" />
-      <Skil skill={'Javascript'} desk={'Programming Language'} icon="javas" />
-      <Skil skill={'Next.JS'} desk={'React Framework'} icon="next" />
-      <hr className="border-1 mb-8 mt-8 w-full border-gray-200 dark:border-gray-800" />
 
       {siteMetadata.newsletter.provider !== '' && (
         <div className="flex items-center justify-center pt-4">
