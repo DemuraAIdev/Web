@@ -3,6 +3,6 @@
   "defaultLocale": "en",
   "localeDetection": true,
   "pages": {
-    "*": ["common"]
+    "/": ["common"]
   }
 }
