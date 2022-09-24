@@ -1,7 +1,7 @@
 {
   "locales": ["id", "en"],
   "defaultLocale": "en",
-  "localeDetection": false,
+  "localeDetection": true,
   "pages": {
     "*": ["common"]
   }
