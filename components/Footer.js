@@ -3,6 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import footerLinks from '@/data/footerLinks'
 import { Other } from '@/data/footerLinks'
 import { SocialLink } from '@/data/footerLinks'
+import LangSwitch from './LangSwitch'
 import NowPlaying from '@/components/nplaying'
 export default function Footer() {
   return (
@@ -56,6 +57,7 @@ export default function Footer() {
         <span className="ml-1.5 inline-block flex-none translate-y-px rounded bg-zinc-100 p-1 text-xs font-medium leading-none text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
           3.0
         </span>
+        <LangSwitch />
       </div>
     </footer>
   )
