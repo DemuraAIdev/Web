@@ -6,6 +6,7 @@ import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
+import useTranslation from 'next-translate/useTranslation'
 
 const MAX_DISPLAY = 2
 
@@ -16,6 +17,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  const { t } = useTranslation('common')
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
@@ -35,7 +37,7 @@ export default function Home({ posts }) {
           <div>
             <TypedBios />
             <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-              {siteMetadata.description}
+              {t('description')}
               <Link className=" bg-cust1 ml-2 font-medium leading-6 " href="/about">
                 About me →
               </Link>

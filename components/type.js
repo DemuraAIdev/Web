@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import Typed from 'typed.js'
-import { Twemoji } from './Twemoji'
-
+import useTranslation from 'next-translate/useTranslation'
 export function TypedBios() {
   let el = React.useRef(null)
   let typed = React.useRef(null)
@@ -17,18 +16,19 @@ export function TypedBios() {
     })
     return () => typed.current.destroy()
   }, [])
+  const { t } = useTranslation('common')
 
   return (
     <>
       <ul id="bios" className="hidden">
         <li>
-          I live in <b className="font-medium">Indonesia</b>.
+          {t('Live')} <b className="font-medium">Indonesia</b>.
         </li>
         <li>
-          My first programming language I learned was <b className="font-medium">HTML</b>.
+          {t('myfirstprogram')} <b className="font-medium">HTML</b>.
         </li>
         <li>I love NODEJS.</li>
-        <li>I work mostly with NextJS/Node and pure JS.</li>
+        <li>{t('workmost')}</li>
         <li>I love EDM music.</li>
       </ul>
       <span ref={el} className="text-lg text-neutral-900 dark:text-neutral-200" />

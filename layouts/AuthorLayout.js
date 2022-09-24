@@ -39,8 +39,7 @@ export default function AuthorLayout({ children, frontMatter }) {
           <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{children}</div>
         </div>
       </div>
-      <hr className="border-1 mb-8 mt-8 w-full border-gray-200 dark:border-gray-800" />
-      <h1 className="mt-8 text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
+      <h1 className="mt-20 text-xl font-extrabold leading-5 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-7 md:text-3xl md:leading-9">
         Skill & Tools
       </h1>
       <Skil skill={'HTML'} desk={'Programming Language'} icon="html" />

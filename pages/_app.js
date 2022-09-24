@@ -21,7 +21,7 @@ import CBb from '@/components/cb'
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
-NProgress.configure({ showSpinner: false, trickle: false })
+NProgress.configure({ showSpinner: false, trickle: false, easing: 'ease' })
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
