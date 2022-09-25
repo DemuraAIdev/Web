@@ -16,6 +16,7 @@ import { ClientReload } from '@/components/ClientReload'
 import { SessionProvider } from 'next-auth/react'
 import CBb from '@/components/cb'
 import { RouterTransition } from '../components/RouterTransition'
+import { NotificationsProvider } from '@mantine/notifications'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
@@ -30,18 +31,20 @@ export default function App({ Component, pageProps }) {
       }}
     >
       <RouterTransition />
-      <SessionProvider session={pageProps.session}>
-        <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-          <Head>
-            <meta content="width=device-width, initial-scale=1" name="viewport" />
-          </Head>
-          {isDevelopment && isSocket && <ClientReload />}
-          <Analytics />
-          <LayoutWrapper>
-            <Component {...pageProps} />
-          </LayoutWrapper>
-        </ThemeProvider>
-      </SessionProvider>
+      <NotificationsProvider autoClose={4000}>
+        <SessionProvider session={pageProps.session}>
+          <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+            <Head>
+              <meta content="width=device-width, initial-scale=1" name="viewport" />
+            </Head>
+            {isDevelopment && isSocket && <ClientReload />}
+            <Analytics />
+            <LayoutWrapper>
+              <Component {...pageProps} />
+            </LayoutWrapper>
+          </ThemeProvider>
+        </SessionProvider>
+      </NotificationsProvider>
     </MantineProvider>
   )
 }

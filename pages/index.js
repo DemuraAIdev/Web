@@ -7,6 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 import { TypedBios } from '@/components/type'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
 import useTranslation from 'next-translate/useTranslation'
+import Notif from '@/components/Notif'
 
 const MAX_DISPLAY = 2
 
