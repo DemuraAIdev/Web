@@ -1,8 +1,9 @@
 {
   "locales": ["id", "en"],
   "defaultLocale": "en",
-  "localeDetection": true,
+  "localeDetection": false,
   "pages": {
     "/": ["common"]
-  }
+  },
+  "ignoreRoutes": ["/blog", "/public/"]
 }
