@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { NavigationProgress, setNavigationProgress } from '@mantine/nprogress'
+import NProgress from 'nprogress' //nprogress module
+import 'nprogress/nprogress.css' //styles of nprogress
 import React from 'react'
 
 export default function ReadingProgressBar() {
@@ -9,7 +10,7 @@ export default function ReadingProgressBar() {
       ScrollHeight = el.scrollHeight || document.body.scrollHeight
     const percent = (ScrollTop / (ScrollHeight - el.clientHeight)) * 100
 
-    setNavigationProgress(percent)
+    NProgress.set(percent)
   }
 
   React.useEffect(() => {
@@ -17,5 +18,5 @@ export default function ReadingProgressBar() {
     return () => window.removeEventListener('scroll', scrollHeight)
   })
 
-  return <NavigationProgress autoReset={false} transitionDuration={0} />
+  return NProgress.start()
 }

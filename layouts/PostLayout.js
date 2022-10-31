@@ -7,7 +7,6 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
-import ReadingProgressBar from '@/components/ReadingProgressBar'
 
 const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/blog/${fileName}`
 const discussUrl = (slug) =>
@@ -120,7 +119,6 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
           </footer>
         </div>
       </article>
-      <ReadingProgressBar />
     </SectionContainer>
   )
 }

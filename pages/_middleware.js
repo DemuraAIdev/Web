@@ -27,6 +27,7 @@ export function middleware(req, ev) {
   response.headers.set('Accept', '*/*')
   response.headers.set('Accept-Language', '*')
   response.headers.set('Permissions-Policy', 'geolocation=(self), microphone=()')
+  response.headers.set('Cache-Control', 'no-cache, max-age=3600')
 
   return response
 }

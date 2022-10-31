@@ -4,13 +4,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
 
-export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
-
-  return { props: { posts } }
-}
-
-export default function Home({ posts }) {
+export default function Home() {
   return (
     <>
       <PageSEO title={`Newsletter - ${siteMetadata.author}`} description="Subscribe now" />

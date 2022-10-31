@@ -1,9 +1,10 @@
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
+import useTranslation from 'next-translate/useTranslation'
+import { useRouter } from 'next/router'
 
 export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
   const [searchValue, setSearchValue] = useState('')
@@ -11,7 +12,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
-
+  const { t } = useTranslation()
+  const { locale } = useRouter()
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
@@ -58,7 +60,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                   <dl>
                     <dt className="sr-only">Published on</dt>
                     <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                      <time dateTime={date}>{formatDate(date)}</time>
+                      <time dateTime={date}>{formatDate(date, locale)}</time>
                     </dd>
                   </dl>
                   <div className="space-y-3 xl:col-span-3">

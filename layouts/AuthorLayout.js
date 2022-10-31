@@ -4,7 +4,6 @@ import { PageSEO } from '@/components/SEO'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import Skil from '@/components/skil'
-import ReadingProgressBar from '@/components/ReadingProgressBar'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
@@ -46,7 +45,6 @@ export default function AuthorLayout({ children, frontMatter }) {
       <Skil skill={'HTML'} desk={'Programming Language'} icon="html" />
       <Skil skill={'Javascript'} desk={'Programming Language'} icon="javas" />
       <Skil skill={'Next.JS'} desk={'React Framework'} icon="next" />
-      <ReadingProgressBar />
     </>
   )
 }
