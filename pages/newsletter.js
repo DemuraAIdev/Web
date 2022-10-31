@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { BlogNewsletterForm } from '@/components/NewsletterForm'
 
 export default function Home() {
