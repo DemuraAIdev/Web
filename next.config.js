@@ -42,12 +42,6 @@ module.exports = nextTranslate(
             'react-dom': 'preact/compat',
           })
         }
-        if (!isServer) {
-          config.node = {
-            fs: 'empty',
-          }
-        }
-
         return config
       },
     })
