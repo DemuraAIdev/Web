@@ -10,10 +10,11 @@ import useTranslation from 'next-translate/useTranslation'
 
 const MAX_DISPLAY = 2
 
-export const getStaticProps = async ({ locale }) => {
-  const posts = await getAllFilesFrontMatter('blog', locale)
+export async function getStaticProps({ locale, defaultLocale, locales }) {
+  const otherLocale = locale !== defaultLocale ? locale : ''
+  const posts = await getAllFilesFrontMatter('blog', otherLocale)
 
-  return { props: { posts } }
+  return { props: { posts, locale, availableLocales: locales } }
 }
 
 export default function Home({ posts }) {
