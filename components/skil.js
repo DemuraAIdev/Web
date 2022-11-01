@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Icon from '@/components/SkillIcon'
 const Skil = ({ skill, desk, icon, url }) => (
   <ul className="mt-4">

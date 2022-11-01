@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import useSWR from 'swr'
 import MusicEqualizer from './MusicEqualizer'
 import Link from './Link'

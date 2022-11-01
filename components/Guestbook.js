@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
-/* eslint-disable prettier/prettier */
 import { useState, useRef, Suspense } from 'react'
 import { format } from 'date-fns'
 import { signIn, signOut, useSession } from 'next-auth/react'

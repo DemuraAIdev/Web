@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { getNowPlaying } from '@/lib/spotify'
 
 export default async function handler(_, res) {

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { signIn } from 'next-auth/react'
 import GoogleDark from './google-dark.svg'
 import GithubDark from './github-dark.svg'

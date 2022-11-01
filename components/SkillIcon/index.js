@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Html from './html5'
 import Javascript from './Javascript'
 import NextJS from './Nextdotjs'

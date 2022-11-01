@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import fetcher from '@/lib/fetcher'
 import useSWR from 'swr'
 import NowPlaying from '@/components/nplaying'

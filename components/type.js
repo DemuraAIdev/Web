@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react'
 import Typed from 'typed.js'
 import useTranslation from 'next-translate/useTranslation'

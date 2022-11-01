@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import PageTitle from '@/components/PageTitle'
 import { getProviders } from 'next-auth/react'
 import { useEffect, useState } from 'react'

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 export default function MusicEqualizer() {
   return (
     <div className="flex h-3 w-4 items-center gap-0.75">

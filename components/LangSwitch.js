@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import setLanguage from 'next-translate/setLanguage'

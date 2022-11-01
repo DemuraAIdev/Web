@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import fs from 'fs'
 import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'

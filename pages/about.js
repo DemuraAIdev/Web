@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getFileBySlug } from '@/lib/mdx'
 

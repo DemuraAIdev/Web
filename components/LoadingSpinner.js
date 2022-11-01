@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 export default function LoadingSpinner() {
   return (
     <svg

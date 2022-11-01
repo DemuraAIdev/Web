@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { signIn, signOut, useSession } from 'next-auth/react'
 import CustomLink from './Link'
 import { useState } from 'react'

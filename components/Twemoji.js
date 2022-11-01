@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { kebabCase } from '@/lib/cases'
 
 export function Twemoji({ emoji, size = 'twa-lg', className }) {

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import prisma from '@/lib/prisma'
 import Guestbook from '@/components/Guestbook'
 import { PageSEO } from '@/components/SEO'

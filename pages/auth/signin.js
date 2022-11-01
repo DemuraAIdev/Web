@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import LoginButton from '@/components/LoginButton'
 import PageTitle from '@/components/PageTitle'
 import { getProviders } from 'next-auth/react'
