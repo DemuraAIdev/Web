@@ -18,8 +18,8 @@ const withPWA = require('next-pwa')({
   ],
 })
 
-module.exports = nextTranslate(
-  withPWA(
+module.exports = withPWA(
+  nextTranslate(
     withBundleAnalyzer({
       reactStrictMode: true,
       pageExtensions: ['js', 'jsx', 'md', 'mdx'],

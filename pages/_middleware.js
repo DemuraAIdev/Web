@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { NextResponse } from 'next/server'
 export function middleware(req, ev) {
   const response = NextResponse.next()

@@ -4,10 +4,8 @@ import Link from './Link'
 const Card = ({ title, description, imgSrc, href }) => (
   <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
     <div
-      // eslint-disable-next-line prettier/prettier
       className={`${
         imgSrc && 'h-full'
-        // eslint-disable-next-line prettier/prettier
       }  transform overflow-hidden rounded-md bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] p-[6px] shadow-xl transition-all hover:scale-[1.01]  dark:shadow-none`}
     >
       <div className="flex h-full flex-col justify-between rounded-lg bg-white transition-colors duration-1000 dark:bg-black ">
