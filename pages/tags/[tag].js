@@ -81,8 +81,8 @@ export default function Tag({ posts, tag, locale, availableLocales }) {
   return (
     <>
       <TagSEO
-        title={`${tag} - ${siteMetadata.title[locale]}`}
-        description={`${tag} tags - ${siteMetadata.title[locale]}`}
+        title={`${tag} - ${siteMetadata.title}`}
+        description={`${tag} tags - ${siteMetadata.title}`}
         availableLocales={availableLocales}
       />
       <ListLayout posts={posts} title={title} />

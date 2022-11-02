@@ -17,7 +17,7 @@ export default function Tags({ tags, locale, availableLocales }) {
   return (
     <>
       <PageSEO
-        title={`Tags - ${siteMetadata.author}`}
+        title={`Tags - ${siteMetadata.title}`}
         description={"tags"}
         availableLocales={availableLocales}
       />

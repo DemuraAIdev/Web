@@ -1,27 +1,31 @@
-import Link from '@/components/Link'
-import { PageSEO } from '@/components/SEO'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import formatDate from '@/lib/utils/formatDate'
-import { TypedBios } from '@/components/type'
-import { BlogNewsletterForm } from '@/components/NewsletterForm'
-import useTranslation from 'next-translate/useTranslation'
+import Link from "@/components/Link";
+import { PageSEO } from "@/components/SEO";
+import Tag from "@/components/Tag";
+import siteMetadata from "@/data/siteMetadata";
+import { getAllFilesFrontMatter } from "@/lib/mdx";
+import formatDate from "@/lib/utils/formatDate";
+import { TypedBios } from "@/components/type";
+import { BlogNewsletterForm } from "@/components/NewsletterForm";
+import useTranslation from "next-translate/useTranslation";
 
-const MAX_DISPLAY = 2
+const MAX_DISPLAY = 2;
 
 export async function getStaticProps({ locale, defaultLocale, locales }) {
-  const otherLocale = locale !== defaultLocale ? locale : ''
-  const posts = await getAllFilesFrontMatter('blog', otherLocale)
+  const otherLocale = locale !== defaultLocale ? locale : "";
+  const posts = await getAllFilesFrontMatter("blog", otherLocale);
 
-  return { props: { posts, locale, availableLocales: locales } }
+  return { props: { posts, locale, availableLocales: locales } };
 }
 
-export default function Home({ posts }) {
-  const { t } = useTranslation('common')
+export default function Home({ posts, locale, availableLocales }) {
+  const { t } = useTranslation("common");
   return (
     <>
-      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <PageSEO
+        title={siteMetadata.title}
+        description={siteMetadata.description}
+        availableLocales={availableLocales}
+      />
       <div className="">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <div
@@ -38,8 +42,11 @@ export default function Home({ posts }) {
           <div>
             <TypedBios />
             <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-              {t('description')}
-              <Link className=" bg-cust1 ml-2 font-medium leading-6 " href="/about">
+              {t("description")}
+              <Link
+                className=" bg-cust1 ml-2 font-medium leading-6 "
+                href="/about"
+              >
                 About me →
               </Link>
             </p>
@@ -49,9 +56,9 @@ export default function Home({ posts }) {
           Latest blog posts
         </h2>
         <ul className="grid grid-cols-1 divide-y">
-          {!posts.length && 'No posts found.'}
+          {!posts.length && "No posts found."}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-            const { slug, date, title, summary, tags } = frontMatter
+            const { slug, date, title, summary, tags } = frontMatter;
             return (
               <li
                 key={slug}
@@ -90,7 +97,7 @@ export default function Home({ posts }) {
                   </article>
                 </div>
               </li>
-            )
+            );
           })}
         </ul>
       </div>
@@ -106,11 +113,11 @@ export default function Home({ posts }) {
         </div>
       )}
 
-      {siteMetadata.newsletter.provider !== '' && (
+      {siteMetadata.newsletter.provider !== "" && (
         <div className="flex items-center justify-center pt-4">
           <BlogNewsletterForm />
         </div>
       )}
     </>
-  )
+  );
 }
