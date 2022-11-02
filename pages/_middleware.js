@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from "next/server";
 export function middleware(req, ev) {
-  const response = NextResponse.next()
+  const response = NextResponse.next();
   const csp = `
     default-src 'self';
     script-src 'self' *.twitter.com 'unsafe-eval' 'unsafe-inline' data: www.googletagmanager.com giscus.app umami.vahryiskandar.my.id;
@@ -13,20 +13,32 @@ export function middleware(req, ev) {
     frame-ancestors 'none';
     base-uri 'none';
     frame-src giscus.app;
-  `
-  response.headers.set('Content-Security-Policy', csp.replace(/\n/g, ''))
+  `;
+  response.headers.set("Content-Security-Policy", csp.replace(/\n/g, ""));
 
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
-  response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
-  response.headers.set('X-Content-Type-Options', 'nosniff')
-  response.headers.set('Access-Control-Allow-Methods', 'GET, DELETE, POST, OPTIONS, HEAD')
-  response.headers.set('Access-Control-Allow-Origin', 'https://umami.vahryiskandar.my.id')
-  response.headers.set('Access-Control-Allow-Credentials', 'true')
-  response.headers.set('X-DNS-Prefetch-Control', 'on')
-  response.headers.set('Accept', '*/*')
-  response.headers.set('Accept-Language', '*')
-  response.headers.set('Permissions-Policy', 'geolocation=(self), microphone=()')
-  response.headers.set('Cache-Control', 'no-cache, max-age=3600')
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  response.headers.set(
+    "Strict-Transport-Security",
+    "max-age=31536000; includeSubDomains; preload"
+  );
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set(
+    "Access-Control-Allow-Methods",
+    "GET, DELETE, POST, OPTIONS, HEAD"
+  );
+  response.headers.set(
+    "Access-Control-Allow-Origin",
+    "https://umami.vahryiskandar.my.id"
+  );
+  response.headers.set("Access-Control-Allow-Credentials", "true");
+  response.headers.set("X-DNS-Prefetch-Control", "on");
+  response.headers.set("Accept", "*/*");
+  response.headers.set("Accept-Language", "*");
+  response.headers.set(
+    "Permissions-Policy",
+    "geolocation=(self), microphone=()"
+  );
+  response.headers.set("Cache-Control", "public,max-age=3600");
 
-  return response
+  return response;
 }
