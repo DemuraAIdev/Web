@@ -1,6 +1,6 @@
 import siteMetadata from "@/data/siteMetadata";
 const Portfolio = [
-  { href: "/", title: "Home" },
+  { href: "/anime", title: "Anime" },
   { href: "/blog", title: "Blog" },
   { href: "/projects", title: "Projects" },
   { href: "/about", title: "About" },
