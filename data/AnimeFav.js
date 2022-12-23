@@ -31,7 +31,7 @@ const AnimeFav = [
     description: `8.9/10`,
     imgSrc:
       "https://upload.wikimedia.org/wikipedia/id/thumb/3/3e/Kono_Subarashii_Sekai_ni_Shukufuku_o%21_light_novel_volume_1_cover.jpg/220px-Kono_Subarashii_Sekai_ni_Shukufuku_o%21_light_novel_volume_1_cover.jpg",
-    href: "/blog/konosuba-review",
+    href: "/blog/konosuba",
   },
 ];
 

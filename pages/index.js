@@ -45,9 +45,9 @@ export default function Home({ posts, locale, availableLocales }) {
               {t("description")}
               <Link
                 className=" bg-cust1 ml-2 font-medium leading-6 "
-                href="/about"
+                href="/menu"
               >
-                About me →
+                Navigation →
               </Link>
             </p>
           </div>
