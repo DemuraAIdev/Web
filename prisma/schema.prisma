@@ -4,37 +4,32 @@ generator client {
 }
 
 datasource db {
-    provider             = "postgresql"
+    provider             = "mongodb"
     url                  = env("DATABASE_URL")
     referentialIntegrity = "prisma"
 }
 
 model guestbook {
-    id         BigInt   @id @default(autoincrement())
-    email      String   @db.VarChar(256)
-    body       String   @db.VarChar(500)
-    created_by String   @db.VarChar(256)
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    email      String   @db.String
+    body       String   @db.String
+    created_by String   @db.String
     created_at DateTime @default(now())
     updated_at DateTime @default(now())
 }
 
-model views {
-    slug  String @id @db.VarChar(128)
-    count BigInt @default(1)
-}
-
 model Account {
-    id                String  @id @default(cuid())
+    id                String  @id @default(auto()) @map("_id") @db.ObjectId
     userId            String
     type              String
     provider          String
     providerAccountId String
-    refresh_token     String? @db.Text
-    access_token      String? @db.Text
+    refresh_token     String? @db.String
+    access_token      String? @db.String
     expires_at        Int?
     token_type        String?
     scope             String?
-    id_token          String? @db.Text
+    id_token          String? @db.String
     session_state     String?
 
     user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -43,7 +38,7 @@ model Account {
 }
 
 model Session {
-    id           String   @id @default(cuid())
+    id           String   @id @default(auto()) @map("_id") @db.ObjectId
     sessionToken String   @unique
     userId       String
     expires      DateTime
@@ -51,7 +46,7 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String    @id @default(auto()) @map("_id") @db.ObjectId
     name          String?
     email         String?   @unique
     emailVerified DateTime?
@@ -61,6 +56,7 @@ model User {
 }
 
 model VerificationToken {
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
     identifier String
     token      String   @unique
     expires    DateTime
