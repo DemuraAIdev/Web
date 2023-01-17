@@ -66,6 +66,7 @@ export default function AuthorLayout({
       <Skil skill={"HTML"} desk={"Programming Language"} icon="html" />
       <Skil skill={"Javascript"} desk={"Programming Language"} icon="javas" />
       <Skil skill={"Next.JS"} desk={"React Framework"} icon="next" />
+      <Skil skill={"TailwindCSS"} desk={"CSS Framework"} icon="tailwind" />
     </>
   );
 }

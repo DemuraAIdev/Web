@@ -18,7 +18,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-black transition hover:text-primary-400 dark:text-zinc-400"
+              className=" text-black transition hover:text-primary-400 dark:text-zinc-400 dark:hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -29,7 +29,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-black transition hover:text-primary-400 dark:text-zinc-400"
+              className=" text-black transition hover:text-primary-400 dark:text-zinc-400 dark:hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-black transition hover:text-primary-400 dark:text-zinc-400"
+              className=" text-black transition hover:text-primary-400 dark:text-zinc-400 dark:hover:text-primary-400"
             >
               {link.title}
             </Link>

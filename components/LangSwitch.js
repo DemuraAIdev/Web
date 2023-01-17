@@ -9,7 +9,7 @@ const LangSwitch = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="text-gray-400 transition hover:text-primary-400">
+        <Menu.Button className="text-black transition hover:text-primary-400 dark:text-gray-400 dark:hover:text-primary-400">
           Language
         </Menu.Button>
       </div>
