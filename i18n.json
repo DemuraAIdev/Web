@@ -3,7 +3,7 @@
   "defaultLocale": "en",
   "localeDetection": false,
   "pages": {
-    "/": ["common"]
+    "*": ["common", "Type"]
   },
   "ignoreRoutes": ["/blog", "/public/"]
 }
