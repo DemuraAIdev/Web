@@ -3,7 +3,8 @@
   "defaultLocale": "en",
   "localeDetection": false,
   "pages": {
-    "*": ["common", "Type"]
+    "*": ["common", "Type"],
+    "/projects": ["Projects"]
   },
   "ignoreRoutes": ["/blog", "/public/"]
 }
