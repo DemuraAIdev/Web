@@ -9,7 +9,7 @@ export async function getStaticProps({ locale, locales }) {
 }
 
 export default function Projects({ locale, availableLocales }) {
-  const { t } = useTranslation();
+  const { t } = useTranslation("Projects");
   return (
     <>
       <PageSEO
