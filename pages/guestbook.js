@@ -15,7 +15,7 @@ export default function GuestbookPage({
         availableLocales={availableLocales}
       />
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
           Guestbook
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
