@@ -44,7 +44,7 @@ export default function Home({ posts, locale, availableLocales }) {
             <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
               {t("description")}
               <Link
-                className=" bg-cust1 ml-2 font-medium leading-6 "
+                className=" bg-cust1 umami--home--navigation ml-2 font-medium leading-6"
                 href="/menu"
               >
                 Navigation →
