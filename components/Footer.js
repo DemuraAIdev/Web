@@ -1,10 +1,10 @@
-import Link from './Link'
-import siteMetadata from '@/data/siteMetadata'
-import footerLinks from '@/data/footerLinks'
-import { Other } from '@/data/footerLinks'
-import { SocialLink } from '@/data/footerLinks'
-import NowPlaying from '@/components/nplaying'
-import LangSwitch from './LangSwitch'
+import Link from "./Link";
+import siteMetadata from "@/data/siteMetadata";
+import footerLinks from "@/data/footerLinks";
+import { Other } from "@/data/footerLinks";
+import { SocialLink } from "@/data/footerLinks";
+import NowPlaying from "@/components/nplaying";
+import LangSwitch from "./LangSwitch";
 export default function Footer() {
   return (
     <footer className="mt-10">
@@ -18,7 +18,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-400 transition hover:text-primary-400"
+              className=" text-black transition hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -29,7 +29,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-400 transition hover:text-primary-400"
+              className=" text-black transition hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
             <Link
               key={link.title}
               href={link.href}
-              className=" text-gray-400 transition hover:text-primary-400"
+              className=" text-black transition hover:text-primary-400"
             >
               {link.title}
             </Link>
@@ -49,16 +49,16 @@ export default function Footer() {
           <LangSwitch />
         </div>
       </div>
-      <div className="mb-9 flex space-x-2 text-sm text-gray-400 dark:text-gray-400">
+      <div className="mb-9 flex space-x-2 text-sm text-black dark:text-gray-400">
         <div>{siteMetadata.author}</div>
         <div>{` • `}</div>
         <div>{`© ${new Date().getFullYear()}`}</div>
         <div>{` • `}</div>
         <Link href="/">{siteMetadata.title}</Link>
-        <span className="ml-1.5 inline-block flex-none translate-y-px rounded bg-zinc-100 p-1 text-xs font-medium leading-none text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+        <span className="black ml-1.5 inline-block flex-none translate-y-px rounded bg-zinc-100 p-1 text-xs font-medium leading-none dark:bg-zinc-800 dark:text-zinc-400">
           3.0
         </span>
       </div>
     </footer>
-  )
+  );
 }
