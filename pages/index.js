@@ -36,13 +36,13 @@ export default function Home({ posts, locale, availableLocales }) {
             text-transparent
             "
           >
-            <h1 className="sm:text-8.5xl tracking-tightest my-28 select-none text-center text-6xl font-extrabold leading-none sm:my-10">
+            <h1 className="sm:text-8.5xl tracking-tightest my-28 select-none text-center text-7xl font-extrabold leading-none sm:my-10">
               Abdul Vaiz Vahry Iskandar
             </h1>
           </div>
           <div>
             <TypedBios />
-            <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+            <p className="text-lg leading-7 text-black dark:text-gray-400">
               {t("description")}
               <Link
                 className=" bg-cust1 umami--home--navigation ml-2 font-medium leading-6"
@@ -115,7 +115,7 @@ export default function Home({ posts, locale, availableLocales }) {
       )}
 
       {siteMetadata.newsletter.provider !== "" && (
-        <div className="flex items-center justify-center pt-4">
+        <div className="flex items-center justify-center pt-4 transition-all hover:scale-[1.01]">
           <BlogNewsletterForm />
         </div>
       )}

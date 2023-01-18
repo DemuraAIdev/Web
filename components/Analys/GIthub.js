@@ -8,7 +8,7 @@ export default function GIthub() {
   const stars = new Number(data?.stars);
   const link = "https://github.com/DemuraAIdev";
   return (
-    <div>
+    <div className="transition-all hover:scale-[1.01]">
       <div className="dark:bg-blue-opaque my-4 w-full rounded border border-blue-200 bg-blue-50 p-6  shadow-xl transition dark:border-gray-800 dark:bg-black dark:shadow-none">
         <Link href={link}>GIthub Stars</Link>
 
