@@ -3,7 +3,7 @@ import Javascript from "./Javascript";
 import NextJS from "./Nextdotjs";
 import NodeJS from "./Nodedotjs";
 import React from "./React";
-import TailwindCss from "./TailwindCss";
+import TailwindCss from "./Tailwind";
 // Icons taken from: https://simpleicons.org/
 
 const components = {

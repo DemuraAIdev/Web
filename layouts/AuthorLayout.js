@@ -1,8 +1,6 @@
 import SocialIcon from "@/components/social-icons";
 import Image from "@/components/Image";
 import { PageSEO } from "@/components/SEO";
-import Comments from "@/components/comments";
-import ScrollTopAndComment from "@/components/ScrollTopAndComment";
 import Skil from "@/components/skil";
 
 export default function AuthorLayout({

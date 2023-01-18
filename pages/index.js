@@ -6,6 +6,7 @@ import { getAllFilesFrontMatter } from "@/lib/mdx";
 import formatDate from "@/lib/utils/formatDate";
 import { TypedBios } from "@/components/type";
 import { BlogNewsletterForm } from "@/components/NewsletterForm";
+import Analy from "@/components/Analys";
 import useTranslation from "next-translate/useTranslation";
 
 const MAX_DISPLAY = 2;
@@ -118,6 +119,8 @@ export default function Home({ posts, locale, availableLocales }) {
           <BlogNewsletterForm />
         </div>
       )}
+
+      <Analy />
     </>
   );
 }
