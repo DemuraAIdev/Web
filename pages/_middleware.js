@@ -15,7 +15,7 @@ export function middleware(req, ev) {
     base-uri 'none';
   `;
   response.headers.set("Content-Security-Policy", csp.replace(/\n/g, ""));
-
+  response.headers.set("Cache-Control", "max-age=31536000, public");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   response.headers.set(
     "Strict-Transport-Security",
