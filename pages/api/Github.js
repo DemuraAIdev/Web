@@ -2,7 +2,7 @@ export const config = {
   runtime: "experimental-edge",
 };
 
-export default async function handler(req) {
+export default async function handler(req, res) {
   const userResponse = await fetch("https://api.github.com/users/DemuraAIdev");
   const userReposResponse = await fetch(
     "https://api.github.com/users/DemuraAIdev/repos?per_page=100"
@@ -15,18 +15,8 @@ export default async function handler(req) {
   const stars = mine.reduce((accumulator, repository) => {
     return accumulator + repository["stargazers_count"];
   }, 0);
+  // get followers count
+  const followers = user.followers;
 
-  return new Response(
-    JSON.stringify({
-      followers: user.followers,
-      stars,
-    }),
-    {
-      status: 200,
-      headers: {
-        "content-type": "application/json",
-        "cache-control": "public, s-maxage=1200, stale-while-revalidate=600",
-      },
-    }
-  );
+  return res.status(200).json({ stars, followers });
 }
