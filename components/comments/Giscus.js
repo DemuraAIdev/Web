@@ -1,78 +1,67 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState } from "react";
+import { useTheme } from "next-themes";
 
-import { useTheme } from 'next-themes'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from "@/data/siteMetadata";
 
-const Giscus = () => {
-  const [enableLoadComments, setEnabledLoadComments] = useState(true)
-  const { theme, resolvedTheme } = useTheme()
+const Giscus = ({ mapping }) => {
+  const [enableLoadComments, setEnabledLoadComments] = useState(true);
+  const { theme, resolvedTheme } = useTheme();
   const commentsTheme =
-    siteMetadata.comment.giscusConfig.themeURL === ''
-      ? theme === 'dark' || resolvedTheme === 'dark'
+    siteMetadata.comment.giscusConfig.themeURL === ""
+      ? theme === "dark" || resolvedTheme === "dark"
         ? siteMetadata.comment.giscusConfig.darkTheme
         : siteMetadata.comment.giscusConfig.theme
-      : siteMetadata.comment.giscusConfig.themeURL
+      : siteMetadata.comment.giscusConfig.themeURL;
 
-  const COMMENTS_ID = 'comments-container'
+  const COMMENTS_ID = "comments-container";
 
-  const LoadComments = useCallback(() => {
-    setEnabledLoadComments(false)
+  function LoadComments() {
+    setEnabledLoadComments(false);
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", siteMetadata.comment.giscusConfig.repo);
+    script.setAttribute(
+      "data-repo-id",
+      siteMetadata.comment.giscusConfig.repositoryId
+    );
+    script.setAttribute(
+      "data-category",
+      siteMetadata.comment.giscusConfig.category
+    );
+    script.setAttribute(
+      "data-category-id",
+      siteMetadata.comment.giscusConfig.categoryId
+    );
+    script.setAttribute("data-mapping", mapping);
+    script.setAttribute(
+      "data-reactions-enabled",
+      siteMetadata.comment.giscusConfig.reactions
+    );
+    script.setAttribute(
+      "data-emit-metadata",
+      siteMetadata.comment.giscusConfig.metadata
+    );
+    script.setAttribute("data-theme", commentsTheme);
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
 
-    const {
-      repo,
-      repositoryId,
-      category,
-      categoryId,
-      mapping,
-      reactions,
-      metadata,
-      inputPosition,
-      lang,
-    } = siteMetadata?.comment?.giscusConfig
-
-    const script = document.createElement('script')
-    script.src = 'https://giscus.app/client.js'
-    script.setAttribute('data-repo', repo)
-    script.setAttribute('data-repo-id', repositoryId)
-    script.setAttribute('data-category', category)
-    script.setAttribute('data-category-id', categoryId)
-    script.setAttribute('data-mapping', mapping)
-    script.setAttribute('data-reactions-enabled', reactions)
-    script.setAttribute('data-emit-metadata', metadata)
-    script.setAttribute('data-input-position', inputPosition)
-    script.setAttribute('data-lang', lang)
-    script.setAttribute('data-theme', commentsTheme)
-    script.setAttribute('crossorigin', 'anonymous')
-    script.async = true
-
-    const comments = document.getElementById(COMMENTS_ID)
-    if (comments) comments.appendChild(script)
+    const comments = document.getElementById(COMMENTS_ID);
+    if (comments) comments.appendChild(script);
 
     return () => {
-      const comments = document.getElementById(COMMENTS_ID)
-      if (comments) comments.innerHTML = ''
-    }
-  }, [commentsTheme])
-
-  // Reload on theme change
-  useEffect(() => {
-    const iframe = document.querySelector('iframe.giscus-frame')
-    if (!iframe) return
-    LoadComments()
-  }, [LoadComments])
+      const comments = document.getElementById(COMMENTS_ID);
+      if (comments) comments.innerHTML = "";
+    };
+  }
 
   return (
-    <div
-      className={`rounded-lg p-2 text-center text-gray-500 transition-all dark:text-gray-400 ${
-        enableLoadComments
-          ? 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600'
-          : 'bg-transparent'
-      }`}
-    >
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
+    <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
+      {enableLoadComments && (
+        <button onClick={LoadComments}>Load comment</button>
+      )}
       <div className="giscus" id={COMMENTS_ID} />
     </div>
-  )
-}
+  );
+};
 
-export default Giscus
+export default Giscus;

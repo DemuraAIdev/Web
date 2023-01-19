@@ -47,6 +47,17 @@ module.exports = withPWA(
         }
         return config;
       },
+      redirects() {
+        return [
+          process.env.MAINTENANCE_MODE === "1"
+            ? {
+                source: "/",
+                destination: "/maintenance.html",
+                permanent: false,
+              }
+            : null,
+        ].filter(Boolean);
+      },
     })
   )
 );
