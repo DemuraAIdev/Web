@@ -61,15 +61,14 @@ const i18nConfig = require("../i18n.json");
   }
   const siteUrl = siteMetadata.siteUrl;
 
-  const sitemap = `
-  <?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:xhtml="http://www.w3.org/1999/xhtml"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
-      http://www.w3.org/1999/xhtml
-      http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+  ttp://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+  http://www.w3.org/1999/xhtml
+  http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
             ${pagesWithLoc
               .map(([path, loc, alreadyPresent]) => {
                 // @todo: Can you check especially here ?
@@ -94,13 +93,13 @@ const i18nConfig = require("../i18n.json");
                 routeMultiLang.map((e) => (e[2] = true)); //making allreadyPresnt to true
                 if (routeMultiLang.length === 1)
                   return `
-                        <url>
-                            <loc>${siteUrl}${route}</loc>
-                        </url>
+  <url>
+    <loc>${siteUrl}${route}</loc>
+  </url>
                     `;
                 return `
-                          <url>
-                              <loc>${siteUrl}${
+  <url>
+    <loc>${siteUrl}${
                   routeMultiLang.filter(([path, loc]) =>
                     loc === defaultLocale ? path : ""
                   ).length !== 0
@@ -111,19 +110,15 @@ const i18nConfig = require("../i18n.json");
                 }</loc>
                   ${routeMultiLang
                     .map(
-                      ([xe, xloc]) =>
-                        `                               <xhtml:link 
-                               rel="alternate"
-                               hreflang="${xloc}"
-                               href="${siteUrl}${xe}"/>
-                               `
+                      ([xe, xloc]) => ` 
+    <xhtml:link rel="alternate" hreflang="${xloc}" href="${siteUrl}${xe}"/>`
                     )
                     .join("")}
-                          </url>
+  </url>
                       `;
               })
               .join("")}
-        </urlset>
+</urlset>
     `;
 
   // eslint-disable-next-line no-sync
