@@ -30,6 +30,7 @@ class MyDocument extends Document {
           />
           <meta name="msapplication-TileColor" content="#000000" />
           <meta
+            type="text/xml"
             name="msapplication-config"
             content="/static/favicons/browserconfig.xml"
           />
