@@ -12,7 +12,7 @@ export default function GIthub() {
       <div className="dark:bg-blue-opaque my-4 w-full rounded-md border-2 border-blue-200 bg-blue-50 p-6  shadow-xl transition dark:border-gray-600 dark:bg-black dark:shadow-none">
         <Link href={link}>GIthub Followers</Link>
 
-        <p className="spacing-sm mt-2 animate-pulse text-3xl font-bold text-black dark:text-white">
+        <p className="spacing-sm mt-2 text-3xl font-bold text-black dark:text-white">
           {follow > 0 ? follow.toLocaleString() : "-"}
         </p>
       </div>
