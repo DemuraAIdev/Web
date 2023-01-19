@@ -81,14 +81,6 @@ export default function Newsletter({ locale, availableLocales }) {
           <li>
             <Link
               className={"bg-cust1"}
-              href="https://bin.vahryiskandar.my.id/"
-            >
-              Bin
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={"bg-cust1"}
               href="https://uptime.vahryiskandar.my.id/"
             >
               Uptime
