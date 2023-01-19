@@ -9,6 +9,7 @@ export function middleware(req, ev) {
     img-src 'self' data: https: blob: https://www.googletagmanager.com;
     worker-src 'self' *.youtube.com *.google.com *.twitter.com;
     connect-src *;
+    frame-src giscus.app
     object-src 'none';
     form-action 'self';
     frame-ancestors 'none';
