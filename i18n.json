@@ -6,5 +6,5 @@
     "*": ["common", "Type"],
     "/projects": ["Projects"]
   },
-  "ignoreRoutes": ["/blog", "/public/"]
+  "ignoreRoutes": ["/blog", "/public/", "/auth/"]
 }
